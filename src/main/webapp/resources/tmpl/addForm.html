@@ -1,0 +1,29 @@
+<td>
+	<input type="text" name="uname" id="uname" ng-model="curUser.name" class="form-control" placeholder="Введите имя пользователя" required ng-minlength="1" ng-maxlength="255" />
+	<div ng-show="addForm.uname.$invalid && addForm.uname.$dirty" class="alert alert-danger" role="alert">
+			<span ng-show="addForm.uname.$error.required">Это поле должно быть заполнено</span>
+			<span ng-show="addForm.uname.$error.minlength">Минимальная длина поля 1</span>
+			<span ng-show="addForm.uname.$error.maxlength">Максимальная длина поля 255</span>
+	</div>
+</td>
+<td>
+	<input type="number" name="age" id="age" ng-model="curUser.age" class="form-control" placeholder="от 0 до 255" required min="0" max="255" />
+	<div ng-show="addForm.age.$invalid && addForm.age.$dirty" class="alert alert-danger" role="alert">
+		<div ng-show="addForm.age.$error.required">Это поле должно быть заполнено</div>
+		<div ng-show="addForm.age.$error.min || addForm.age.$error.max || addForm.age.$error.number">Введите целое число от 0 - 255</div>
+	</div>
+</td>
+<td ng-init="curUser.admin=false">
+	<label class="radio-inline">
+		<input type="radio" name="admin" ng-model="curUser.admin" data-ng-value="false" required>Нет
+	</label>
+	<label class="radio-inline">
+		<input type="radio" name="admin" ng-model="curUser.admin" data-ng-value="true" required>Да
+	</label>
+</td>
+<td></td>
+<td>
+	<input type="hidden" ng-model="curUser.id" />
+	<button class="btn btn-default btn-sm" ng-disabled="addForm.$invalid" ng-click="submitUser()"><span class="glyphicon glyphicon-plus" ng-class="addFormSubmitButtonClass" aria-hidden="true"></span></button>
+	<button class="btn btn-default btn-sm" ng-click="resetAddForm($(this))"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+</td>

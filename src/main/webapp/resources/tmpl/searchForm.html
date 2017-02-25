@@ -1,0 +1,24 @@
+<td>
+	<input type="text" name="sname" id="sname" ng-model="sUser.name" class="form-control" placeholder="Имя пользователя для поиска" ng-maxlength="255" />
+	<div ng-show="searchForm.sname.$invalid && searchForm.sname.$dirty" class="alert alert-danger" role="alert">
+			<span ng-show="searchForm.sname.$error.maxlength">Максимальная длина поля 255</span>
+	</div>
+</td>
+<td>
+	<input type="number" name="sage" id="sage" ng-model="sUser.age" class="form-control" placeholder="от 0 до 255" min="0" max="255" />
+	<div ng-show="searchForm.sage.$invalid && searchForm.sage.$dirty" class="alert alert-danger" role="alert">
+		<div ng-show="searchForm.sage.$error.min || searchForm.sage.$error.max || searchForm.sage.$error.number">Введите целое число от 0 - 255</div>
+	</div>
+</td>
+<td>
+	<select class="form-control" name="sadmin" id="sadmin" ng-model="sUser.admin">
+		<option value="">Все
+		<option value="false">Нет
+		<option value="true">Да
+	</select>
+</td>
+<td></td>
+<td>
+	<button class="btn btn-default btn-sm" type="button" ng-disabled="searchForm.$pristine" ng-click="newSearch()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+	<button class="btn btn-default btn-sm" ng-click="resetSearchForm()"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+</td>
