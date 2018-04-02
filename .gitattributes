@@ -1,4 +1,4 @@
-src/main/webapp/resources/js/angular.min.js angular-vendored
-src/main/webapp/resources/js/bootstrap.min.js bootstrap-vendored
-src/main/webapp/resources/js/bootstrap-notify.min.js bootstrap-notify-vendored
-src/main/webapp/resources/js/jquery-3.1.1.min.js jquery-vendored
+src/main/webapp/resources/js/angular.min.js linguist-vendored
+src/main/webapp/resources/js/bootstrap.min.js linguist-vendored
+src/main/webapp/resources/js/bootstrap-notify.min.js linguist-vendored
+src/main/webapp/resources/js/jquery-3.1.1.min.js linguist-vendored
